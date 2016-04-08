@@ -28,6 +28,14 @@ module VictorOps
       end
     end
 
+    def entity_id
+      if settings.entity_id.nil?
+        entity_display_name
+      else
+        settings.entity_id
+      end
+    end
+
     def entity_display_name=(str)
       settings.entity_display_name = str
     end
@@ -98,6 +106,7 @@ module VictorOps
       payload = {
         message_type: data.delete(:vo_alert_type),
         state_start_time: epochtime,
+        entity_id: entity_id,
         entity_display_name: entity_display_name,
         monitoring_tool: monitoring_tool,
       }
