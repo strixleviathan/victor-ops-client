@@ -117,28 +117,28 @@ module VictorOps
     def critical_payload(data)
       generate_payload data.merge({
         vo_alert_type: VictorOps::Defaults::MessageTypes::CRITICAL,
-        state_message: data[:message].nil? ? nil : data.delete(:message).ai
+        state_message: data[:message].nil? ? nil : data.delete(:message)
       })
     end
 
     def warn_payload(data)
       generate_payload data.merge({
         vo_alert_type: VictorOps::Defaults::MessageTypes::WARN,
-        state_message: data[:message].nil? ? nil : data.delete(:message).ai
+        state_message: data[:message].nil? ? nil : data.delete(:message)
       })
     end
 
     def info_payload(data)
       generate_payload data.merge({
         vo_alert_type: VictorOps::Defaults::MessageTypes::INFO,
-        state_message: data[:message].nil? ? nil : data.delete(:message).ai
+        state_message: data[:message].nil? ? nil : data.delete(:message)
       })
     end
 
     def ack_payload(data)
       generate_payload data.merge({
         vo_alert_type: VictorOps::Defaults::MessageTypes::ACK,
-        ack_msg: data[:message].nil? ? nil : data.delete(:message).ai,
+        ack_msg: data[:message].nil? ? nil : data.delete(:message)
         ack_author: data[:author].nil? ? monitoring_tool : data.delete(:author)
       })
     end
@@ -146,7 +146,7 @@ module VictorOps
     def recovery_payload(data)
       generate_payload data.merge({
         vo_alert_type: VictorOps::Defaults::MessageTypes::RECOVERY,
-        state_message: data[:message].nil? ? nil : data.delete(:message).ai
+        state_message: data[:message].nil? ? nil : data.delete(:message)
       })
     end
 
