@@ -10,13 +10,12 @@ Gem::Specification.new do |s|
   s.authors     = ["Derek Smith"]
   s.email       = 'derek@clokwork.net'
   s.homepage    = 'http://clokwork.net'
-  
+
   s.files         = `git ls-files`.split("\n").compact
   s.require_paths = ["lib"]
 
   s.required_ruby_version = '>= 1.9.3'
   s.add_dependency 'rest-client', '~> 1.8', '>= 1.8.0'
-  s.add_dependency 'awesome_print', '~> 1.6', '>= 1.6.1'
   s.add_dependency 'daybreak', '~> 0.3', '>= 0.3.0'
   s.add_development_dependency "rspec", '~> 3.0'
 

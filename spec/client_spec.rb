@@ -329,7 +329,7 @@ RSpec.describe VictorOps::Client do
           expect(data[:message_type]).to eql 'CRITICAL'
           expect(data[:entity_display_name]).to_not be_nil
           expect(data[:monitoring_tool]).to_not be_nil
-          expect(data[:state_message]).to eq '"test"'
+          expect(data[:state_message]).to eq 'test'
           expect(data[:message]).to be_nil
         end
       end
@@ -341,7 +341,7 @@ RSpec.describe VictorOps::Client do
           expect(data[:message_type]).to eql 'WARNING'
           expect(data[:entity_display_name]).to_not be_nil
           expect(data[:monitoring_tool]).to_not be_nil
-          expect(data[:state_message]).to eq '"test"'
+          expect(data[:state_message]).to eq "test"
           expect(data[:message]).to be_nil
         end
       end
@@ -353,7 +353,7 @@ RSpec.describe VictorOps::Client do
           expect(data[:message_type]).to eql 'INFO'
           expect(data[:entity_display_name]).to_not be_nil
           expect(data[:monitoring_tool]).to_not be_nil
-          expect(data[:state_message]).to eq '"test"'
+          expect(data[:state_message]).to eq 'test'
           expect(data[:message]).to be_nil
         end
       end
@@ -367,7 +367,7 @@ RSpec.describe VictorOps::Client do
             expect(data[:entity_display_name]).to_not be_nil
             expect(data[:monitoring_tool]).to_not be_nil
             expect(data[:state_message]).to be_nil
-            expect(data[:ack_msg]).to eq '"test"'
+            expect(data[:ack_msg]).to eq 'test'
             expect(data[:ack_author]).to eq data[:monitoring_tool]
             expect(data[:message]).to be_nil
           end
@@ -381,7 +381,7 @@ RSpec.describe VictorOps::Client do
             expect(data[:entity_display_name]).to_not be_nil
             expect(data[:monitoring_tool]).to_not be_nil
             expect(data[:state_message]).to be_nil
-            expect(data[:ack_msg]).to eq '"test"'
+            expect(data[:ack_msg]).to eq 'test'
             expect(data[:ack_author]).to eq 'test author'
             expect(data[:message]).to be_nil
             expect(data[:author]).to be_nil
@@ -396,7 +396,7 @@ RSpec.describe VictorOps::Client do
           expect(data[:message_type]).to eql 'RECOVERY'
           expect(data[:entity_display_name]).to_not be_nil
           expect(data[:monitoring_tool]).to_not be_nil
-          expect(data[:state_message]).to eq '"test"'
+          expect(data[:state_message]).to eq 'test'
           expect(data[:message]).to be_nil
         end
       end
