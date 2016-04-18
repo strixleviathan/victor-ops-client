@@ -138,7 +138,7 @@ module VictorOps
     def ack_payload(data)
       generate_payload data.merge({
         vo_alert_type: VictorOps::Defaults::MessageTypes::ACK,
-        ack_msg: data[:message].nil? ? nil : data.delete(:message)
+        ack_msg: data[:message].nil? ? nil : data.delete(:message),
         ack_author: data[:author].nil? ? monitoring_tool : data.delete(:author)
       })
     end
