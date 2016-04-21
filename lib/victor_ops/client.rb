@@ -6,7 +6,6 @@ require 'victor_ops/client/persistence'
 module VictorOps
   class Client
     require 'ostruct'
-    require 'awesome_print'
     require 'json'
     require 'rest-client'
 
@@ -14,7 +13,6 @@ module VictorOps
 
     def initialize(opts)
       @settings = OpenStruct.new opts
-      AwesomePrint.defaults = { indent: -2, plain: true }
       set_default_settings
       configure_data_store unless settings.persist.nil?
       raise VictorOps::Client::MissingSettings unless valid_settings?
