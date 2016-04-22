@@ -85,11 +85,10 @@ module VictorOps
       "#{settings.api_url}/#{settings.routing_key}"
     end
 
-    def post(payload, options = {})
+    def post(payload)
       resp = nil
-      options[:ssl_version] ||= 'SSLv23'
       begin
-        json = RestClient.post endpoint, payload.to_json, {}, options
+        json = RestClient::Request.execute method: :post, url: endpoint, payload: payload.to_json, :ssl_version => 'SSLv23'
         resp = JSON::parse(json)
         raise VictorOps::Client::PostFailure, "Response from VictorOps contains a failure message: #{resp.ai}" if resp['result'] == 'failure'
       rescue Exception => e
