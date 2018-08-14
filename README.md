@@ -17,7 +17,7 @@ gem install victor_ops-client
 ## Requirements
 
 - Ruby 1.9.3 or higher
-- `rest-client` & `awesome_print`
+- `rest-client`
 - VictorOps API Access
 
 ## Example
