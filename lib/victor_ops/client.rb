@@ -85,10 +85,10 @@ module VictorOps
       "#{settings.api_url}/#{settings.routing_key}"
     end
 
-    def post(payload, options = {})
+    def post(payload)
       resp = nil
       begin
-        json = RestClient.post endpoint, payload.to_json, {}, options
+        json = RestClient.post endpoint, payload.to_json
         resp = JSON::parse(json)
         raise VictorOps::Client::PostFailure, "Response from VictorOps contains a failure message: #{resp.ai}" if resp['result'] == 'failure'
       rescue Exception => e
