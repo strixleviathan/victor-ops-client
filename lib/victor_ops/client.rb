@@ -87,7 +87,6 @@ module VictorOps
 
     def post(payload, options = {})
       resp = nil
-      options[:ssl_version] ||= 'SSLv23'
       begin
         json = RestClient.post endpoint, payload.to_json, {}, options
         resp = JSON::parse(json)
